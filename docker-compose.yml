@@ -4,6 +4,11 @@ services:
 
   facetrack:
     build: .
+    image: sofwerx/tello-facetrack
     container_name: facetrack
     network_mode: host
-
+    environment:
+      DISPLAY: ${DISPLAY}
+      LANDTIME: 300
+    volumes:
+      - ./volumes/.Xauthority:/root/.Xauthority
