@@ -1,6 +1,6 @@
 # Ping this machine to get its IP, and add a :0 to that to refer to the primary X11 display on this machine.
 # Try to make this work on both mac and linux...
-TCP_DISPLAY:=$(shell echo `ping -c 1 $$(hostname) | grep "from" | sed -e "s/$$(hostname) //' -e 's/(//' -e 's/)//' | cut -d' ' -f4 | cut -d: -f1`:0)
+TCP_DISPLAY:=$(shell echo `ping -c 1 $$(hostname) | grep "from" | sed -e "s/$$(hostname) //" -e 's/(//' -e 's/)//' | cut -d' ' -f4 | cut -d: -f1`:0)
 
 # Obtain the MIT_MAGIC_COOKIE line from xauth for the X11 display on this machine 
 XAUTH:=$(shell xauth -n list :0.0 | head -1 | cut -d' ' -f2-)
