@@ -16,10 +16,9 @@ Note: You may need to run `xterm` or some other X11 client app once on your mac 
 
 Ensure your docker-engine hosting machine is associated via Wifi as a client to the tello drone, then run:
 
-    docker-compose up
+    make
 
-If you change anything but the changes do not appear to happen inside the docker container, use this:
+If you change anything, you will need to force a new build:
 
-    docker-compose build
-    docker-compose up --force-recreate
+    make build run
 
