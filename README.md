@@ -22,3 +22,9 @@ If you change anything, you will need to force a new build:
 
     make build run
 
+## Docker Hub
+
+The resultant image built from this Dockerfile is pushed to Docker Hub and available as `sofwerx/tello-facetrack`
+By default, the Makefile will pull this imge and use it:
+
+- https://hub.docker.com/r/sofwerx/tello-facetrack/
