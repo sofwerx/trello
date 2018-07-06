@@ -14,6 +14,11 @@ Please read the [GLX.md](GLX.md) file for instructions for your particular X11 d
 
 Note: You may need to run `xterm` or some other X11 client app once on your mac to generate the `MIT_MAGIC_COOKIE` in `~/.Xauthority` for your XQuartz display.
 
+First, clone this repo locally:
+
+    git clone https://github.com/sofwerx/docker-tello-facetrack
+    cd docker-tello-facetrack
+
 Ensure your docker-engine hosting machine is associated via Wifi as a client to the tello drone, then run:
 
     make
