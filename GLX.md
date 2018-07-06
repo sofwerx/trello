@@ -25,7 +25,15 @@ On newer version of Ubuntu (15.04+), you can edit `/etc/lightdm/lightdm.conf` wi
     xserver-allow-tcp=true
     xserver-command=X -listen tcp +iglx
 
-On older versions of linux this can be achieved with:
+If you are using gdm instead of lightdm, you may need to edit `/etc/gdm3/custom.conf` and set:
+
+    [security]
+    DisallowTCP=false
+
+    [xdmcp]
+    ServerArguments=-listen tcp +iglx
+
+On older versions of linux this can also be hacked in with:
 
     sudo mv /usr/bin/Xorg /usr/bin/Xorg.original
     cat <<EOF > /tmp/Xorg
