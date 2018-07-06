@@ -1,4 +1,4 @@
-# Ping this machine to get its IP, and add a :0 to that to refer to the primary X11 display on this machine.
+# Ping this machine to get its IP, and add a :display.screen suffix to that to refer to the primary X11 display on this machine.
 # Try to make this work on both mac and linux...
 TCP_DISPLAY:=$(shell echo `ping -c 1 $$(hostname) | grep "from" | sed -e "s/$$(hostname) //" -e 's/(//' -e 's/)//' | cut -d' ' -f4 | cut -d: -f1`:`echo $$DISPLAY | cut -d: -f2-`)
 
