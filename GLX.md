@@ -15,7 +15,17 @@ On CentOS this can be achieved with:
     sudo chmod +x /usr/bin/Xorg
     sudo chcon --type=bin_t /usr/bin/Xorg
 
-On Ubuntu this can be achieved with:
+On newer version of Ubuntu (15.04+), you can edit `/etc/lightdm/lightdm.conf` with:
+
+    [Seat:*]
+    autologin-guest=false
+    autologin-user=ubuntu
+    autologin-user-timeout=0
+    autologin-session=lightdm-autologin
+    xserver-allow-tcp=true
+    xserver-command=X -listen tcp +iglx
+
+On older versions of linux this can be achieved with:
 
     sudo mv /usr/bin/Xorg /usr/bin/Xorg.original
     cat <<EOF > /tmp/Xorg
@@ -28,7 +38,7 @@ On Ubuntu this can be achieved with:
     if [ -x "\$basedir"/Xorg.wrap ]; then
     exec "\$basedir"/Xorg.wrap "\$@"
     else
-    exec "\$basedir"/Xorg "\$@" +iglx
+    exec "\$basedir"/Xorg "\$@" -listen tcp +iglx
     fi
     EOF
     sudo mv /tmp/Xorg /usr/bin/Xorg
