@@ -19,6 +19,7 @@ RUN cd $GOPATH/src/gocv.io/x/gocv \
 RUN bash -c 'go get -v github.com/veandco/go-sdl2/{sdl,img,mix,ttf}'
 
 RUN go get -d -u gobot.io/x/gobot/...
+RUN go get github.com/gobuffalo/uuid
 RUN cd $GOPATH/src/gobot.io/x/gobot \
  && git checkout dev \
  && git fetch
