@@ -1,10 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"image"
-	"image/color"
-	"io"
+	"fmt" //Package fmt implements formatted I/O with functions analogous to C's printf and scanf. The format 'verbs' are derived from C's but are simpler.
+	"image" //Package image implements a basic 2-D image library.
+	"image/color" //Package color implements a basic color library.
+	"io" //Package io provides basic interfaces to I/O primitives. Its primary job is to wrap existing implementations of such primitives, such as those in package os, into shared public interfaces that abstract the functionality, plus some other related primitives.
 	"math"
 	"os"
 	"os/exec"
